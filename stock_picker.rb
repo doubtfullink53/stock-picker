@@ -1,17 +1,24 @@
 
 
 def stock_picker(prices)
+
+  buy_date = []
+  profit = 0
   mininum_price = prices[0]
   mininum_index = 0
-  profit = 0
-  buy_date = []
+ 
+  
 
     prices.each_with_index do |price, index |
+
+    subtract_price = price - mininum_price
+
       if ( mininum_price > price)
          mininum_price = price
          mininum_index = index
-      elsif (profit < price - mininum_price )
-        profit = price - mininum_price
+         
+      elsif (profit <  subtract_price  )
+        profit = subtract_price
         buy_date = [mininum_index, index]
       end
     end
