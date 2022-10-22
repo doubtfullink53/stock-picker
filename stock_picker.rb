@@ -10,11 +10,7 @@ def stock_picker(prices)
       if ( mininum_price > price)
          mininum_price = price
          mininum_index = index
-        next
-        
-      end
-     
-      if (profit < price - mininum_price )
+      elsif (profit < price - mininum_price )
         profit = price - mininum_price
         buy_date = [mininum_index, index]
       end
